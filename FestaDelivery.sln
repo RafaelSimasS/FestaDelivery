@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FestaDelivery", "FestaDelivery.csproj", "{86AF4AD9-5761-43F4-8A1D-DE010C9845ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{86AF4AD9-5761-43F4-8A1D-DE010C9845ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86AF4AD9-5761-43F4-8A1D-DE010C9845ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86AF4AD9-5761-43F4-8A1D-DE010C9845ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86AF4AD9-5761-43F4-8A1D-DE010C9845ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {356A051C-DE22-47AC-B06D-99CE541C9367}
+	EndGlobalSection
+EndGlobal
