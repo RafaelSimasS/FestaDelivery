@@ -1,6 +1,6 @@
 ﻿namespace FestaDelivery
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,58 +28,104 @@
         /// </summary>
         private void InitializeComponent()
         {
-            menuStrip1 = new MenuStrip();
-            gerenciamentoToolStripMenuItem = new ToolStripMenuItem();
-            catálogoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
-            menuStrip1.SuspendLayout();
+            LblEmail = new Label();
+            LblSenha = new Label();
+            TxtSenha = new TextBox();
+            TxtEmail = new TextBox();
+            BtnLogin = new Button();
+            LblCadastro = new Label();
             SuspendLayout();
             // 
-            // menuStrip1
+            // LblEmail
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { gerenciamentoToolStripMenuItem });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(800, 24);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
+            LblEmail.AutoSize = true;
+            LblEmail.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblEmail.Location = new Point(216, 145);
+            LblEmail.Name = "LblEmail";
+            LblEmail.Size = new Size(79, 27);
+            LblEmail.TabIndex = 0;
+            LblEmail.Text = "Email:";
             // 
-            // gerenciamentoToolStripMenuItem
+            // LblSenha
             // 
-            gerenciamentoToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { catálogoDeProdutosToolStripMenuItem });
-            gerenciamentoToolStripMenuItem.Name = "gerenciamentoToolStripMenuItem";
-            gerenciamentoToolStripMenuItem.Size = new Size(100, 20);
-            gerenciamentoToolStripMenuItem.Text = "Gerenciamento";
+            LblSenha.AutoSize = true;
+            LblSenha.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblSenha.Location = new Point(206, 202);
+            LblSenha.Name = "LblSenha";
+            LblSenha.Size = new Size(89, 27);
+            LblSenha.TabIndex = 1;
+            LblSenha.Text = "Senha:";
             // 
-            // catálogoDeProdutosToolStripMenuItem
+            // TxtSenha
             // 
-            catálogoDeProdutosToolStripMenuItem.Name = "catálogoDeProdutosToolStripMenuItem";
-            catálogoDeProdutosToolStripMenuItem.Size = new Size(189, 22);
-            catálogoDeProdutosToolStripMenuItem.Text = "Catálogo de Produtos";
+            TxtSenha.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtSenha.Location = new Point(310, 199);
+            TxtSenha.MaxLength = 8;
+            TxtSenha.Name = "TxtSenha";
+            TxtSenha.PasswordChar = '*';
+            TxtSenha.Size = new Size(228, 35);
+            TxtSenha.TabIndex = 2;
             // 
-            // Form1
+            // TxtEmail
+            // 
+            TxtEmail.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtEmail.Location = new Point(310, 142);
+            TxtEmail.Name = "TxtEmail";
+            TxtEmail.Size = new Size(228, 35);
+            TxtEmail.TabIndex = 3;
+            // 
+            // BtnLogin
+            // 
+            BtnLogin.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BtnLogin.Location = new Point(350, 262);
+            BtnLogin.Name = "BtnLogin";
+            BtnLogin.Size = new Size(138, 37);
+            BtnLogin.TabIndex = 4;
+            BtnLogin.Text = "Entrar";
+            BtnLogin.UseVisualStyleBackColor = true;
+            BtnLogin.Click += BtnLogin_Click;
+            // 
+            // LblCadastro
+            // 
+            LblCadastro.AutoSize = true;
+            LblCadastro.Font = new Font("Arial", 18F, FontStyle.Underline, GraphicsUnit.Point, 0);
+            LblCadastro.Location = new Point(638, 414);
+            LblCadastro.Name = "LblCadastro";
+            LblCadastro.Size = new Size(150, 27);
+            LblCadastro.TabIndex = 5;
+            LblCadastro.Text = "Cadastrar-se";
+            LblCadastro.Click += LblCadastro_Click;
+            LblCadastro.MouseEnter += LblCadastro_MouseEnter;
+            LblCadastro.MouseLeave += LblCadastro_MouseLeave;
+            // 
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(menuStrip1);
-            IsMdiContainer = true;
-            MainMenuStrip = menuStrip1;
+            Controls.Add(LblCadastro);
+            Controls.Add(BtnLogin);
+            Controls.Add(TxtEmail);
+            Controls.Add(TxtSenha);
+            Controls.Add(LblSenha);
+            Controls.Add(LblEmail);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "Form1";
+            Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
-            WindowState = FormWindowState.Maximized;
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
+            Text = "Festa Delivery: Login";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem gerenciamentoToolStripMenuItem;
-        private ToolStripMenuItem catálogoDeProdutosToolStripMenuItem;
+        private Label LblEmail;
+        private Label LblSenha;
+        private TextBox TxtSenha;
+        private TextBox TxtEmail;
+        private Button BtnLogin;
+        private Label LblCadastro;
     }
 }
