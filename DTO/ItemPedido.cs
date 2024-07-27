@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FestaDelivery.DTO
 {
-    internal class ItemPedido
+    public class ItemPedido
     {
         private int _pedidoId;
         private int _produtoId;

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+﻿using FestaDelivery.DTO;
 
 namespace FestaDelivery
 {
@@ -45,8 +36,71 @@ namespace FestaDelivery
                 item.SubItems.Add(produto.PrecoUni.ToString("C"));
                 item.SubItems.Add(produto.Quantidade.ToString());
 
+                item.Tag = produto; // Salve a referência do objeto Produto no item
                 LstCatalogo.Items.Add(item);
             }
+        }
+
+        private void LstCatalogo_DoubleClick(object sender, EventArgs e)
+        {
+            if (LstCatalogo.SelectedItems.Count == 1)
+            {
+                ListViewItem selectedItem = LstCatalogo.SelectedItems[0];
+                if (selectedItem.Tag != null)
+                {
+                    Produto produto = (Produto)selectedItem.Tag;
+
+                    using (FormEditProduto formEdit = new FormEditProduto(produto))
+                    {
+                        // Remover MdiParent antes de chamar ShowDialog
+                        formEdit.MdiParent = null; // Remover o MDI pai
+                        DialogResult resultado = formEdit.ShowDialog();
+                        if (resultado == DialogResult.OK)
+                        {
+                            // Atualize o item no ListView
+                            selectedItem.SubItems[1].Text = produto.Categoria;
+                            selectedItem.SubItems[2].Text = produto.Nome;
+                            selectedItem.SubItems[3].Text = produto.Descricao;
+                            selectedItem.SubItems[4].Text = produto.PrecoUni.ToString("C");
+                            selectedItem.SubItems[5].Text = produto.Quantidade.ToString();
+                        }
+                        else if (resultado == DialogResult.Ignore) // Ou outro valor definido para exclusão
+                        {
+                            // Remova o item do ListView
+                            LstCatalogo.Items.Remove(selectedItem);
+                        }
+                    }
+                }
+            }
+        }
+
+        private void adicionarProdutoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (FormAdicionarProduto formAdd = new FormAdicionarProduto())
+            {
+                // Exibir o formulário e aguardar a conclusão
+                if (formAdd.ShowDialog() == DialogResult.OK)
+                {
+                    // Obter o produto adicionado do formulário
+                    Produto novoProduto = formAdd.NovoProduto;
+
+                    // Adicionar o produto à lista e atualizar o ListView
+                    Program.Produtos.Add(novoProduto);
+                    AdicionarProdutoNoListView(novoProduto);
+                }
+            }
+        }
+        private void AdicionarProdutoNoListView(Produto produto)
+        {
+            ListViewItem item = new ListViewItem(produto.Id.ToString());
+            item.SubItems.Add(produto.Categoria);
+            item.SubItems.Add(produto.Nome);
+            item.SubItems.Add(produto.Descricao);
+            item.SubItems.Add(produto.PrecoUni.ToString("C"));
+            item.SubItems.Add(produto.Quantidade.ToString());
+
+            item.Tag = produto; // Salve a referência do objeto Produto no item
+            LstCatalogo.Items.Add(item);
         }
     }
 }

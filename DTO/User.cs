@@ -1,6 +1,6 @@
 ﻿namespace FestaDelivery.DTO
 {
-    internal class User
+    public class User
     {
         private int _id;
         private string _nome;

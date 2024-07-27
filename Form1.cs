@@ -2,23 +2,11 @@ namespace FestaDelivery
 {
     public partial class FormLogin : Form
     {
-        private FormCatalogo formCatalogo;
         public FormLogin()
         {
             InitializeComponent();
         }
 
-        private void catálogoDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (formCatalogo == null || formCatalogo.IsDisposed)
-            {
-                formCatalogo = new FormCatalogo();
-                formCatalogo.MdiParent = this;
-
-            }
-            formCatalogo.BringToFront();
-            formCatalogo.Show();
-        }
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
@@ -31,7 +19,7 @@ namespace FestaDelivery
             {
                 this.Hide();
                 FormHome formHome = new FormHome();
-                formHome.FormClosed += (s, args) => this.Close();
+                formHome.FormClosed += (s, args) => this.Show();
                 formHome.Show();
             }
             else

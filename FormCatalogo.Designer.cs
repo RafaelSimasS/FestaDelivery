@@ -29,16 +29,36 @@
         private void InitializeComponent()
         {
             LstCatalogo = new ListView();
+            menuCatalogo = new MenuStrip();
+            adicionarProdutoToolStripMenuItem = new ToolStripMenuItem();
+            menuCatalogo.SuspendLayout();
             SuspendLayout();
             // 
             // LstCatalogo
             // 
             LstCatalogo.Dock = DockStyle.Fill;
-            LstCatalogo.Location = new Point(0, 0);
+            LstCatalogo.Location = new Point(0, 24);
             LstCatalogo.Name = "LstCatalogo";
-            LstCatalogo.Size = new Size(800, 450);
+            LstCatalogo.Size = new Size(800, 426);
             LstCatalogo.TabIndex = 0;
             LstCatalogo.UseCompatibleStateImageBehavior = false;
+            LstCatalogo.DoubleClick += LstCatalogo_DoubleClick;
+            // 
+            // menuCatalogo
+            // 
+            menuCatalogo.Items.AddRange(new ToolStripItem[] { adicionarProdutoToolStripMenuItem });
+            menuCatalogo.Location = new Point(0, 0);
+            menuCatalogo.Name = "menuCatalogo";
+            menuCatalogo.Size = new Size(800, 24);
+            menuCatalogo.TabIndex = 1;
+            menuCatalogo.Text = "menuStrip1";
+            // 
+            // adicionarProdutoToolStripMenuItem
+            // 
+            adicionarProdutoToolStripMenuItem.Name = "adicionarProdutoToolStripMenuItem";
+            adicionarProdutoToolStripMenuItem.Size = new Size(116, 20);
+            adicionarProdutoToolStripMenuItem.Text = "Adicionar Produto";
+            adicionarProdutoToolStripMenuItem.Click += adicionarProdutoToolStripMenuItem_Click;
             // 
             // FormCatalogo
             // 
@@ -46,15 +66,25 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(LstCatalogo);
+            Controls.Add(menuCatalogo);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MainMenuStrip = menuCatalogo;
+            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCatalogo";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "Catálogo de Produtos";
             WindowState = FormWindowState.Maximized;
+            menuCatalogo.ResumeLayout(false);
+            menuCatalogo.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListView LstCatalogo;
+        private MenuStrip menuCatalogo;
+        private ToolStripMenuItem adicionarProdutoToolStripMenuItem;
     }
 }

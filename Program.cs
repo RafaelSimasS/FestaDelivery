@@ -17,7 +17,7 @@ namespace FestaDelivery
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             InicializarDadosFicticios();
-            Application.Run(new FormLogin());
+            Application.Run(new FormHome());
         }
         static void InicializarDadosFicticios()
         {

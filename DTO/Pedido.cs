@@ -1,6 +1,6 @@
 ﻿namespace FestaDelivery.DTO
 {
-    internal class Pedido
+    public class Pedido
     {
         private int _id;
         private int _clienteId;

@@ -13,6 +13,8 @@ namespace FestaDelivery
     public partial class FormHome : Form
     {
         private FormCatalogo formCatalogo;
+        private FormPedidos formPedidos;
+
         public FormHome()
         {
             InitializeComponent();
@@ -33,6 +35,18 @@ namespace FestaDelivery
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pedidosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (formPedidos == null || formPedidos.IsDisposed)
+            {
+                formPedidos = new FormPedidos();
+                formPedidos.MdiParent = this;
+
+            }
+            formPedidos.BringToFront();
+            formPedidos.Show();
         }
     }
 }
