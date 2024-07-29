@@ -9,6 +9,11 @@ namespace FestaDelivery
             InitializeComponent();
             ConfigurarListView();
             CarregarProdutos();
+
+            if (Program.currentUser.Tipo != "Admin")
+            {
+                adicionarProdutoToolStripMenuItem.Visible = false;
+            }
         }
 
         private void ConfigurarListView()
@@ -43,32 +48,47 @@ namespace FestaDelivery
 
         private void LstCatalogo_DoubleClick(object sender, EventArgs e)
         {
-            if (LstCatalogo.SelectedItems.Count == 1)
+            if (LstCatalogo.SelectedItems.Count != 1)
             {
-                ListViewItem selectedItem = LstCatalogo.SelectedItems[0];
-                if (selectedItem.Tag != null)
+                return;
+            }
+            ListViewItem selectedItem = LstCatalogo.SelectedItems[0];
+            if (selectedItem.Tag == null)
+            {
+                return;
+            }
+            Produto produto = (Produto)selectedItem.Tag;
+            if (Program.currentUser.Tipo == "Admin")
+            {
+                using (FormEditProduto formEdit = new FormEditProduto(produto))
                 {
-                    Produto produto = (Produto)selectedItem.Tag;
-
-                    using (FormEditProduto formEdit = new FormEditProduto(produto))
+                    // Remover MdiParent antes de chamar ShowDialog
+                    formEdit.MdiParent = null; // Remover o MDI pai
+                    DialogResult resultado = formEdit.ShowDialog();
+                    if (resultado == DialogResult.OK)
                     {
-                        // Remover MdiParent antes de chamar ShowDialog
-                        formEdit.MdiParent = null; // Remover o MDI pai
-                        DialogResult resultado = formEdit.ShowDialog();
-                        if (resultado == DialogResult.OK)
-                        {
-                            // Atualize o item no ListView
-                            selectedItem.SubItems[1].Text = produto.Categoria;
-                            selectedItem.SubItems[2].Text = produto.Nome;
-                            selectedItem.SubItems[3].Text = produto.Descricao;
-                            selectedItem.SubItems[4].Text = produto.PrecoUni.ToString("C");
-                            selectedItem.SubItems[5].Text = produto.Quantidade.ToString();
-                        }
-                        else if (resultado == DialogResult.Ignore) // Ou outro valor definido para exclusão
-                        {
-                            // Remova o item do ListView
-                            LstCatalogo.Items.Remove(selectedItem);
-                        }
+                        // Atualize o item no ListView
+                        selectedItem.SubItems[1].Text = produto.Categoria;
+                        selectedItem.SubItems[2].Text = produto.Nome;
+                        selectedItem.SubItems[3].Text = produto.Descricao;
+                        selectedItem.SubItems[4].Text = produto.PrecoUni.ToString("C");
+                        selectedItem.SubItems[5].Text = produto.Quantidade.ToString();
+                    }
+                    else if (resultado == DialogResult.Ignore) // Ou outro valor definido para exclusão
+                    {
+                        // Remova o item do ListView
+                        LstCatalogo.Items.Remove(selectedItem);
+                    }
+                }
+            }
+            else if (Program.currentUser.Tipo == "Cliente")
+            {
+                using (FormAdicionarNoCarrinho formAdicionar = new FormAdicionarNoCarrinho(produto))
+                {
+                    if (formAdicionar.ShowDialog() == DialogResult.OK)
+                    {
+                        // Atualize o item no ListView
+                        selectedItem.SubItems[5].Text = produto.Quantidade.ToString();
                     }
                 }
             }

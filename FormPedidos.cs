@@ -24,7 +24,13 @@ namespace FestaDelivery
         }
         private void CarregarPedidos()
         {
-            foreach (var pedido in Program.Pedidos)
+            LstPedidos.Items.Clear();
+
+            var pedidosFiltrados = Program.currentUser.Tipo == "Cliente" ?
+            Program.Pedidos.Where(p => p.ClienteId == Program.currentUser.Id) :
+            Program.Pedidos;
+
+            foreach (Pedido pedido in pedidosFiltrados)
             {
                 // Buscar o nome do cliente na lista de usuários
                 string nomeCliente = Program.Users.FirstOrDefault(user => user.Id == pedido.ClienteId)?.Nome ?? "Desconhecido";
@@ -42,25 +48,36 @@ namespace FestaDelivery
 
         private void LstPedidos_DoubleClick(object sender, EventArgs e)
         {
-            if (LstPedidos.SelectedItems.Count == 1)
+            if (LstPedidos.SelectedItems.Count != 1)
             {
-                ListViewItem selectedItem = LstPedidos.SelectedItems[0];
-                if (selectedItem.Tag != null)
+                return;
+            }
+            ListViewItem selectedItem = LstPedidos.SelectedItems[0];
+            if (selectedItem.Tag == null)
+            {
+                return;
+            }
+
+            Pedido pedido = (Pedido)selectedItem.Tag;
+            if (Program.currentUser.Tipo == "Admin")
+            {
+                using (FormEditPedido formEdit = new FormEditPedido(pedido))
                 {
-                    Pedido pedido = (Pedido)selectedItem.Tag;
-
-                    using (FormEditPedido formEdit = new FormEditPedido(pedido))
+                    if (formEdit.ShowDialog() == DialogResult.OK)
                     {
-                        if (formEdit.ShowDialog() == DialogResult.OK)
-                        {
-                            // Atualize o item no ListView
-                            selectedItem.SubItems[4].Text = pedido.Status;
-                        }
+                        // Atualize o item no ListView
+                        selectedItem.SubItems[4].Text = pedido.Status;
                     }
-
-
                 }
             }
+            else if (Program.currentUser.Tipo == "Cliente")
+            {
+                using (FormShowPedido formShow = new FormShowPedido(pedido))
+                {
+                    formShow.ShowDialog();
+                }
+            }
+
         }
     }
 

@@ -17,10 +17,21 @@ namespace FestaDelivery
 
             if (user != null)
             {
+                Program.currentUser = user;
                 this.Hide();
-                FormHome formHome = new FormHome();
-                formHome.FormClosed += (s, args) => this.Show();
-                formHome.Show();
+                if (user.Tipo == "Cliente")
+                {
+                    FormHomeCliente formHomeCliente = new FormHomeCliente();
+                    formHomeCliente.FormClosed += (s, args) => this.Show();
+                    formHomeCliente.Show();
+                }
+                else
+                {
+                    FormHome formHome = new FormHome();
+                    formHome.FormClosed += (s, args) => this.Show();
+                    formHome.Show();
+
+                }
             }
             else
             {

@@ -10,6 +10,9 @@ namespace FestaDelivery
         public static List<User> Users = new List<User>();
         public static List<Produto> Produtos = new List<Produto>();
         public static List<Pedido> Pedidos = new List<Pedido>();
+        public static List<Carrinho> Carrinhos = new List<Carrinho>();
+        public static User currentUser;
+
         [STAThread]
         static void Main()
         {
@@ -17,12 +20,14 @@ namespace FestaDelivery
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             InicializarDadosFicticios();
-            Application.Run(new FormHome());
+            Application.Run(new FormLogin());
         }
         static void InicializarDadosFicticios()
         {
             Users.Add(new User(1, "Admin User", "Admin", "admin@teste.com", "admin123"));
-            Users.Add(new User(2, "Cliente User", "Cliente", "cliente@teste.com", "cliente123"));
+            Users.Add(new User(2, "Cliente User", "Cliente", "cliente@teste.com", "cliente1"));
+
+            Carrinhos.Add(new Carrinho(2, true, 0));
 
             Produtos.Add(new Produto(1, "Eletrônicos", "Celular", "Smartphone", 1500.0, 10));
             Produtos.Add(new Produto(2, "Eletrônicos", "Notebook", "Laptop", 3500.0, 5));
