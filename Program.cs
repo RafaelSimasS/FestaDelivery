@@ -29,13 +29,21 @@ namespace FestaDelivery
 
             Carrinhos.Add(new Carrinho(2, true, 0));
 
-            Produtos.Add(new Produto(1, "Eletrônicos", "Celular", "Smartphone", 1500.0, 10));
-            Produtos.Add(new Produto(2, "Eletrônicos", "Notebook", "Laptop", 3500.0, 5));
+            Produtos.Add(new Produto(1, "Salgados", "Coxinha de Frango", "Coxinha Com Recheio de Frango", 1.0, 1000));
+            Produtos.Add(new Produto(2, "Salgados", "Bolinha de Queijo", "Bolinha Com Recheio de Queijo", 1.5, 1000));
+            Produtos.Add(new Produto(3, "Salgados", "Enrolado de Presunto e Queijo", "Enrolado Com Recheio de Presunto e Queijo", 2.0, 200));
+            Produtos.Add(new Produto(4, "Doces", "Brigadeiro", "Brigadeiro de Chocolate", 0.25, 3500));
+            Produtos.Add(new Produto(5, "Doces", "Brigadeiro de Leite Ninho", "Brigadeiro feito com leite ninho e uva", 0.50, 2000));
+            Produtos.Add(new Produto(6, "Doces", "Fatia de Pudim", "Fatia 50g", 3.5, 100));
+            Produtos.Add(new Produto(7, "Doces", "Pudim", "Pudim completo", 10, 20));
 
-            var pedido1 = new Pedido(1, 2, DateTime.Now, 1500.0, "Pendente");
+            Produtos.Add(new Produto(8, "Doces", "Bolo Red Velvet", "Bolo de 1Kg", 100, 100));
+
+
+            var pedido1 = new Pedido(1, 2, DateTime.Now, 1.0, "Pendente");
             pedido1.Produtos.Add(new ItemPedido(1, 1, 1));
 
-            var pedido2 = new Pedido(2, 2, DateTime.Now, 7000.0, "Pendente");
+            var pedido2 = new Pedido(2, 2, DateTime.Now, 5, "Pendente");
             pedido2.Produtos.Add(new ItemPedido(2, 1, 2));
             pedido2.Produtos.Add(new ItemPedido(2, 2, 2));
 
