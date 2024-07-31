@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCatalogo));
             LstCatalogo = new ListView();
             menuCatalogo = new MenuStrip();
             adicionarProdutoToolStripMenuItem = new ToolStripMenuItem();
@@ -68,6 +69,7 @@
             Controls.Add(LstCatalogo);
             Controls.Add(menuCatalogo);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuCatalogo;
             MaximizeBox = false;
             MinimizeBox = false;

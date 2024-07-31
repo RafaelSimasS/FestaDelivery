@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditProduto));
             LblCategoria = new Label();
             LblNome = new Label();
             LblDescricao = new Label();
@@ -172,6 +173,7 @@
             Controls.Add(LblNome);
             Controls.Add(LblCategoria);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormEditProduto";

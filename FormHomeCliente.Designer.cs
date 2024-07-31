@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHomeCliente));
             menuStrip1 = new MenuStrip();
             exibirToolStripMenuItem = new ToolStripMenuItem();
             catálogoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
@@ -97,6 +98,7 @@
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
             MaximizeBox = false;

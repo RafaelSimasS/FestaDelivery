@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdicionarProduto));
             BtnSalvar = new Button();
             TxtPrecoUni = new TextBox();
             TxtQuantidade = new TextBox();
@@ -159,6 +160,7 @@
             Controls.Add(LblNome);
             Controls.Add(LblCategoria);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormAdicionarProduto";

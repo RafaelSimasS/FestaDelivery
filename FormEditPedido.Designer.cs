@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEditPedido));
             BtnSalvar = new Button();
             CmbStatus = new ComboBox();
             LblStatus = new Label();
@@ -74,6 +75,7 @@
             Controls.Add(CmbStatus);
             Controls.Add(BtnSalvar);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormEditPedido";

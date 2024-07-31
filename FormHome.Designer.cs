@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHome));
             menuHome = new MenuStrip();
             gerenciamentoToolStripMenuItem = new ToolStripMenuItem();
             catalogoDeProdutosToolStripMenuItem = new ToolStripMenuItem();
@@ -80,6 +81,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(menuHome);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuHome;
             Name = "FormHome";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormShowPedido));
             LstItensPedido = new ListView();
             SuspendLayout();
             // 
@@ -46,6 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(LstItensPedido);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormShowPedido";
             Text = "FormShowPedido";
             ResumeLayout(false);

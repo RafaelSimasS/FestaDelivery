@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             LstPedidos = new ListView();
             SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             ClientSize = new Size(800, 450);
             Controls.Add(LstPedidos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormPedidos";

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdicionarNoCarrinho));
             LblNome = new Label();
             LblPreco = new Label();
             label1 = new Label();
@@ -154,6 +155,7 @@
             Controls.Add(label1);
             Controls.Add(LblPreco);
             Controls.Add(LblNome);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormAdicionarNoCarrinho";
             Text = "FormAdicionarNoCarrinho";
             ResumeLayout(false);
