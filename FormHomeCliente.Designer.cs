@@ -71,14 +71,14 @@
             // carrinhoToolStripMenuItem
             // 
             carrinhoToolStripMenuItem.Name = "carrinhoToolStripMenuItem";
-            carrinhoToolStripMenuItem.Size = new Size(180, 22);
+            carrinhoToolStripMenuItem.Size = new Size(120, 22);
             carrinhoToolStripMenuItem.Text = "Carrinho";
             carrinhoToolStripMenuItem.Click += carrinhoToolStripMenuItem_Click;
             // 
             // pedidosToolStripMenuItem
             // 
             pedidosToolStripMenuItem.Name = "pedidosToolStripMenuItem";
-            pedidosToolStripMenuItem.Size = new Size(180, 22);
+            pedidosToolStripMenuItem.Size = new Size(120, 22);
             pedidosToolStripMenuItem.Text = "Pedidos";
             pedidosToolStripMenuItem.Click += pedidosToolStripMenuItem_Click;
             // 
@@ -95,6 +95,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(menuStrip1);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;

@@ -23,9 +23,9 @@ namespace FestaDelivery
             string nome = TxtNome.Text;
             string email = TxtEmail.Text;
             string senha = TxtSenha.Text;
-
+            string endereco = TxtEndereco.Text;
             // Verifica se os campos não estão vazios
-            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha))
+            if (string.IsNullOrWhiteSpace(nome) || string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(senha) || string.IsNullOrEmpty(endereco))
             {
                 MessageBox.Show("Todos os campos devem ser preenchidos.", "Erro de Cadastro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -41,7 +41,7 @@ namespace FestaDelivery
             // Gera o próximo ID disponível
             int novoId = Program.Users.Any() ? Program.Users.Max(u => u.Id) + 1 : 1;
 
-            User novoCliente = new User(novoId, nome, "Cliente", email, senha);
+            User novoCliente = new User(novoId, nome, "Cliente", email, senha, endereco);
 
             // Adiciona o novo cliente à lista de usuários
             Program.Users.Add(novoCliente);
@@ -52,6 +52,7 @@ namespace FestaDelivery
             TxtNome.Clear();
             TxtEmail.Clear();
             TxtSenha.Clear();
+            TxtEndereco.Clear();
         }
 
         private void LblLogin_MouseLeave(object sender, EventArgs e)

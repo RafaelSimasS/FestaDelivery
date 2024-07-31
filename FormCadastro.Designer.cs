@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastro));
             TxtEmail = new TextBox();
             LblEmail = new Label();
             TxtSenha = new TextBox();
@@ -36,6 +37,8 @@
             LblNome = new Label();
             BtnCadastro = new Button();
             LblLogin = new Label();
+            LblEndereco = new Label();
+            TxtEndereco = new TextBox();
             SuspendLayout();
             // 
             // TxtEmail
@@ -44,7 +47,7 @@
             TxtEmail.Location = new Point(309, 131);
             TxtEmail.Name = "TxtEmail";
             TxtEmail.Size = new Size(228, 35);
-            TxtEmail.TabIndex = 5;
+            TxtEmail.TabIndex = 2;
             // 
             // LblEmail
             // 
@@ -59,18 +62,18 @@
             // TxtSenha
             // 
             TxtSenha.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            TxtSenha.Location = new Point(309, 190);
+            TxtSenha.Location = new Point(309, 242);
             TxtSenha.MaxLength = 8;
             TxtSenha.Name = "TxtSenha";
             TxtSenha.PasswordChar = '*';
             TxtSenha.Size = new Size(228, 35);
-            TxtSenha.TabIndex = 7;
+            TxtSenha.TabIndex = 4;
             // 
             // LblSenha
             // 
             LblSenha.AutoSize = true;
             LblSenha.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LblSenha.Location = new Point(205, 193);
+            LblSenha.Location = new Point(205, 245);
             LblSenha.Name = "LblSenha";
             LblSenha.Size = new Size(89, 27);
             LblSenha.TabIndex = 6;
@@ -82,7 +85,7 @@
             TxtNome.Location = new Point(309, 72);
             TxtNome.Name = "TxtNome";
             TxtNome.Size = new Size(228, 35);
-            TxtNome.TabIndex = 9;
+            TxtNome.TabIndex = 1;
             // 
             // LblNome
             // 
@@ -97,10 +100,10 @@
             // BtnCadastro
             // 
             BtnCadastro.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            BtnCadastro.Location = new Point(344, 267);
+            BtnCadastro.Location = new Point(353, 299);
             BtnCadastro.Name = "BtnCadastro";
             BtnCadastro.Size = new Size(138, 37);
-            BtnCadastro.TabIndex = 10;
+            BtnCadastro.TabIndex = 5;
             BtnCadastro.Text = "Cadastrar";
             BtnCadastro.UseVisualStyleBackColor = true;
             BtnCadastro.Click += BtnCadastro_Click;
@@ -118,11 +121,32 @@
             LblLogin.MouseEnter += LblLogin_MouseEnter;
             LblLogin.MouseLeave += LblLogin_MouseLeave;
             // 
+            // LblEndereco
+            // 
+            LblEndereco.AutoSize = true;
+            LblEndereco.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblEndereco.Location = new Point(172, 190);
+            LblEndereco.Name = "LblEndereco";
+            LblEndereco.Size = new Size(122, 27);
+            LblEndereco.TabIndex = 12;
+            LblEndereco.Text = "Endereço:";
+            // 
+            // TxtEndereco
+            // 
+            TxtEndereco.Font = new Font("Arial", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtEndereco.Location = new Point(309, 187);
+            TxtEndereco.MaxLength = 255;
+            TxtEndereco.Name = "TxtEndereco";
+            TxtEndereco.Size = new Size(228, 35);
+            TxtEndereco.TabIndex = 3;
+            // 
             // FormCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(TxtEndereco);
+            Controls.Add(LblEndereco);
             Controls.Add(LblLogin);
             Controls.Add(BtnCadastro);
             Controls.Add(TxtNome);
@@ -132,6 +156,7 @@
             Controls.Add(TxtEmail);
             Controls.Add(LblEmail);
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastro";
@@ -151,5 +176,7 @@
         private Label LblNome;
         private Button BtnCadastro;
         private Label LblLogin;
+        private Label LblEndereco;
+        private TextBox TxtEndereco;
     }
 }

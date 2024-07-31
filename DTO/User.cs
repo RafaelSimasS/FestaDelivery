@@ -7,6 +7,7 @@
         private string _tipo;
         private string _email;
         private string _senha;
+        private string? _endereco;
 
         public int Id
         {
@@ -38,13 +39,20 @@
             set { _senha = value; }
         }
 
-        public User(int id, string nome, string tipo, string email, string senha)
+        public string Endereco
+        {
+            get { return _endereco; }
+            set { _endereco = value; }
+        }
+
+        public User(int id, string nome, string tipo, string email, string senha, string? endereco = null)
         {
             _id = id;
             _nome = nome;
             _tipo = tipo;
             _email = email;
             _senha = senha;
+            _endereco = endereco;
         }
     }
 }

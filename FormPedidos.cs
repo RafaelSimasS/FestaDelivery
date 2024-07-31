@@ -21,6 +21,7 @@ namespace FestaDelivery
             LstPedidos.Columns.Add("Data", 100, HorizontalAlignment.Left);
             LstPedidos.Columns.Add("Preço Total", 100, HorizontalAlignment.Right);
             LstPedidos.Columns.Add("Status", 100, HorizontalAlignment.Left);
+            LstPedidos.Columns.Add("Endereço", 100, HorizontalAlignment.Left);
         }
         private void CarregarPedidos()
         {
@@ -34,12 +35,13 @@ namespace FestaDelivery
             {
                 // Buscar o nome do cliente na lista de usuários
                 string nomeCliente = Program.Users.FirstOrDefault(user => user.Id == pedido.ClienteId)?.Nome ?? "Desconhecido";
-
+                string endereco = Program.Users.FirstOrDefault(user => user.Id == pedido.ClienteId)?.Endereco ?? "-";
                 ListViewItem item = new ListViewItem(pedido.Id.ToString());
                 item.SubItems.Add(nomeCliente);
                 item.SubItems.Add(pedido.Data.ToString("dd/MM/yyyy")); // Formatação de data
                 item.SubItems.Add(pedido.PrecoTotal.ToString("C")); // Formatação de moeda
                 item.SubItems.Add(pedido.Status);
+                item.SubItems.Add(endereco);
 
                 item.Tag = pedido; // Salvar a referência do objeto Pedido no item
                 LstPedidos.Items.Add(item);

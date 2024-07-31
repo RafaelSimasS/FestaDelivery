@@ -34,6 +34,9 @@
             TxtEmail = new TextBox();
             BtnLogin = new Button();
             LblCadastro = new Label();
+            label1 = new Label();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // LblEmail
@@ -98,23 +101,49 @@
             LblCadastro.MouseEnter += LblCadastro_MouseEnter;
             LblCadastro.MouseLeave += LblCadastro_MouseLeave;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Arial", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(224, 102, 255);
+            label1.Location = new Point(117, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(214, 29);
+            label1.TabIndex = 7;
+            label1.Text = "FESTA DELIVERY";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.LOGO;
+            pictureBox1.Location = new Point(1, 1);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(110, 110);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
+            Controls.Add(pictureBox1);
             Controls.Add(LblCadastro);
             Controls.Add(BtnLogin);
             Controls.Add(TxtEmail);
             Controls.Add(TxtSenha);
             Controls.Add(LblSenha);
             Controls.Add(LblEmail);
+            DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Festa Delivery: Login";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,5 +156,7 @@
         private TextBox TxtEmail;
         private Button BtnLogin;
         private Label LblCadastro;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

@@ -25,7 +25,7 @@ namespace FestaDelivery
         static void InicializarDadosFicticios()
         {
             Users.Add(new User(1, "Admin User", "Admin", "admin@teste.com", "admin123"));
-            Users.Add(new User(2, "Cliente User", "Cliente", "cliente@teste.com", "cliente1"));
+            Users.Add(new User(2, "Cliente User", "Cliente", "cliente@teste.com", "cliente1", "Av. Tal, Bairro Tal, Cidade Tal, Casa 99"));
 
             Carrinhos.Add(new Carrinho(2, true, 0));
 
