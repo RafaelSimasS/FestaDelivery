@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCarrinho));
             LstCarrinho = new ListView();
             menuStrip1 = new MenuStrip();
             fecharCarrinhoToolStripMenuItem = new ToolStripMenuItem();
@@ -68,9 +67,7 @@
             Controls.Add(LstCarrinho);
             Controls.Add(menuStrip1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
-            Icon = (Icon)resources.GetObject("$this.Icon");
             MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCarrinho";
             StartPosition = FormStartPosition.CenterScreen;

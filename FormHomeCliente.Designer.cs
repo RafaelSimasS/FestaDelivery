@@ -101,10 +101,10 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
-            MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormHomeCliente";
             Text = "Festa Delivery: Home";
+            WindowState = FormWindowState.Maximized;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);

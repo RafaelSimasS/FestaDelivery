@@ -84,8 +84,10 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             IsMdiContainer = true;
             MainMenuStrip = menuHome;
+            MinimizeBox = false;
             Name = "FormHome";
             Text = "Administração: Home";
+            WindowState = FormWindowState.Maximized;
             menuHome.ResumeLayout(false);
             menuHome.PerformLayout();
             ResumeLayout(false);

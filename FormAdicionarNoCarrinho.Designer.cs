@@ -156,8 +156,9 @@
             Controls.Add(LblPreco);
             Controls.Add(LblNome);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
             Name = "FormAdicionarNoCarrinho";
-            Text = "FormAdicionarNoCarrinho";
+            Text = "Adicionar no Carrinho";
             ResumeLayout(false);
             PerformLayout();
         }
