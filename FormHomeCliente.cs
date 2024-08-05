@@ -18,6 +18,13 @@
                 formCatalogo.MdiParent = this;
 
             }
+            else
+            {
+                formCatalogo.Close(); // Fecha o formulário se já estiver aberto
+                formCatalogo.Dispose(); // Libera recursos do formulário fechado
+                formCatalogo = new FormCatalogo(); // Cria um novo formulário
+                formCatalogo.MdiParent = this;
+            }
             formCatalogo.BringToFront();
             formCatalogo.Show();
         }
@@ -29,6 +36,13 @@
                 formCarrinho = new FormCarrinho();
                 formCarrinho.MdiParent = this;
             }
+            else
+            {
+                formCarrinho.Close(); // Fecha o formulário se já estiver aberto
+                formCarrinho.Dispose(); // Libera recursos do formulário fechado
+                formCarrinho = new FormCarrinho(); // Cria um novo formulário
+                formCarrinho.MdiParent = this;
+            }
             formCarrinho.BringToFront();
             formCarrinho.Show();
         }
@@ -37,6 +51,13 @@
             if (formPedidos == null || formPedidos.IsDisposed)
             {
                 formPedidos = new FormPedidos();
+                formPedidos.MdiParent = this;
+            }
+            else
+            {
+                formPedidos.Close(); // Fecha o formulário se já estiver aberto
+                formPedidos.Dispose(); // Libera recursos do formulário fechado
+                formPedidos = new FormPedidos(); // Cria um novo formulário
                 formPedidos.MdiParent = this;
             }
             formPedidos.BringToFront();
